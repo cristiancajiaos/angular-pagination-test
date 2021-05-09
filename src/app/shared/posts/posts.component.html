@@ -1,0 +1,31 @@
+<ul>
+  <li *ngFor="let post of posts | paginate: {itemsPerPage: 10, currentPage: currentPage}">
+    {{post.title}}
+  </li>
+</ul>
+
+<div
+  class="d-flex flex-sm-column flex-md-column flex-lg-row align-items-start align-items-sm-start align-items-md-start justify-content-lg-between align-items-lg-start">
+  <span class="mb-2">
+    ...
+  </span>
+  <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>
+
+
+<!--
+   <div
+     class="d-flex flex-sm-column flex-md-column flex-lg-row align-items-start align-items-sm-start align-items-md-start justify-content-lg-between align-items-lg-start">
+     <span class="mb-2">
+       Mostrando
+       {{((page.pageNumber == 0) ? 1 : page.pageNumber) - 1}}
+       a
+       {{((page.pageNumber == 0) ? 1 : page.pageNumber) - 1}}
+       de
+       {{page.totalElements}}
+       entradas
+     </span>
+     <pagination-controls (pageChange)="pageChange($event)" nextLabel="Siguiente" previousLabel="Anterior">
+     </pagination-controls>
+   </div>
+-->
